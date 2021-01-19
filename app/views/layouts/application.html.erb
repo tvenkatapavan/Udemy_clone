@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <div class="taskbar">
+        <ul class="task_items">
+          <li class="udemyicon">
+            <a href="#"></a>.</li>
+          <li>
+            <a href="#">Categories</a>
+            <div class="sub-menu-1">
+              <ul>
+
+                <li>
+                  <%= link_to "Design", design_designpage_path %>
+                </li>
+                <li>
+                  <%= link_to "Developent", development_developmentpage_path %>
+                </li>
+                <li>
+                  <%= link_to "IT & Software", itandsoftware_itandsoftwarepage_path %>
+                </li>
+                <li>
+                  <%= link_to "Photography", photography_photographypage_path %>
+                </li>
+                <li>
+                  <%= link_to "Marketing", marketing_marketingpage_path %>
+                </li>
+                <li>
+                  <%= link_to "Music", music_musicpage_path %>
+                </li>
+                <li>
+                  <%= link_to "Personal Development", personaldevelopment_personaldevelopmentpage_path %>
+                </li>
+                <li>
+                  <%= link_to "Business",business_businesspage_path %>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><input type="text" name="" value="" placeholder="Search for anything" style="border-radius:10px"></li>
+          <li><%= link_to "Teach on Udemy",teaching_teachingpage_path %></li>
+          <li>
+            <i class="fa fa-shopping-cart"></i>
+          </li>
+          <% if info_signed_in? %>
+            <li><%= link_to 'Show_courses', courses_path %></li>
+            <li><%= link_to current_info.email, edit_info_registration_path %></li>
+            <li>
+              <button type="button" name="button"><%= link_to "Logout",destroy_info_session_path, method: :delete %></button>
+            </li>
+            <% elsif teacher_signed_in? %>
+              <li>
+                <button type="button" name="button"><%= link_to "Logout",destroy_info_session_path, method: :delete %></button>
+              </li>
+              <li><%= link_to "Add courses", new_course_path %></li>
+            <% else  %>
+              <li>
+                <button type="button" name="button"><%= link_to "Sign In",new_info_session_path %></button>
+              </li>
+              <li>
+                <button type="button" name="button"><%=link_to "Sign Up",new_info_registration_path %></button>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+      <div>
+        <% if notice %>
+          <div class="alert alert-info">
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-warning">
+            <%= alert %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </body>
+  </html>

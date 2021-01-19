@@ -1,0 +1,36 @@
+// Place all the styles related to the teaching controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.teachermain{
+  background-image: url(https://qph.fs.quoracdn.net/main-qimg-86e36a7a3719e150e807225d388e0415.webp);
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  opacity: 0.6;
+  align-content:  center;
+}
+.teachersub{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:  center;
+}
+.tb{
+  text-decoration: none;
+}
+.first1{
+  background: #505763 url(https://s.udemycdn.com/teaching/header-image.jpg) right top no-repeat;
+  display: flex;
+  flex-direction: column;
+  height:500px;
+  color: white;
+  justify-content: center;
+}
+.first1 button{
+  width:240px;
+  height:50px;
+  margin-left: 20px;
+}
+.first_internal1{
+margin-left:20px;
+}

@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *{
+   box-sizing: border-box;
+ }
+ .udemyicon{
+   width:64px;
+   background: url('https://cdn.worldvectorlogo.com/logos/udemy-2.svg') no-repeat center center / contain;
+ }
+ .taskbar{
+
+   height: auto;
+   padding: 10px;
+ }
+ .taskbar ul{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   list-style: none;
+
+
+ }
+ .taskbar ul li a{
+   text-decoration: none;
+   
+ }
+.taskbar ul li button{
+  text-decoration: none;
+
+}
+ .everyheading{
+   text-align: center;
+ }
+ .everydiv{
+   margin-left:40%;
+ }
+.sub-menu-1{
+  display: none
+}
+.sub-menu-1 ul{
+
+}
+.taskbar ul li:hover
+{
+  padding: 5px;
+  border-radius: 3px;
+}
+.taskbar ul li:hover .sub-menu-1{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  background-color: #c2b280;
+}
+.taskbar ul li:hover .sub-menu-1 ul{
+  display: flex;
+  flex-direction: column;
+
+}
+.iob{
+  background-image: url(https://cdn.hipwallpaper.com/i/5/9/fiTYsW.jpg);
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
